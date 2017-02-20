@@ -1,0 +1,28 @@
+<package>
+  <name>asr_ism_visualizations</name>
+  <version>1.0.0</version>
+  <description>
+    This package provides visualization logic for ism data, e.g. visualization with marker in rviz. 
+  </description>
+  <author>Hanselmann Fabian, Heller Florian, Heizmann Heinrich, Kübler Marcel, Meißner Pascal, Reckling Reno, Stöckle Patrick, Trautmann Jeremias</author>
+  <maintainer email="asr-ros@lists.kit.edu">Meißner Pascal</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>asr_msgs</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>cmake_modules</build_depend>
+  <build_depend>asr_lib_ism</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  
+  <run_depend>cmake_modules</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>asr_msgs</run_depend>
+  <run_depend>visualization_msgs</run_depend> 
+  <run_depend>asr_lib_ism</run_depend> 
+  <run_depend>dynamic_reconfigure</run_depend>
+
+</package>
