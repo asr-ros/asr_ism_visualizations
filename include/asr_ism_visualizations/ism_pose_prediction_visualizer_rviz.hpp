@@ -52,6 +52,10 @@ public:
     }
 
     ~ISMPosePredictionVisualizerRVIZ() {
+
+    }
+
+    void releaseCallback() {
         reconfigure_server_->clearCallback();
         reconfigure_server_vp_->clearCallback();
         delete reconfigure_server_;

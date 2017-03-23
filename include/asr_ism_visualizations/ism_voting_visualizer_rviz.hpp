@@ -40,8 +40,12 @@ public:
     }
 
     ~ISMVotingVisualizerRVIZ() {
+    }
+
+    void releaseCallback() {
         reconfigure_server_->clearCallback();
         delete reconfigure_server_;
+
     }
 
     void dynamicReconfCallback(asr_ism_visualizations::ism_voting_visualizerConfig &config, uint32_t level) {
