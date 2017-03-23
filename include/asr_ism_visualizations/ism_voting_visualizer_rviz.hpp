@@ -60,31 +60,9 @@ public:
         confidence_sphere_opacity_ = config.confidenceSphereOpacity;
         pattern_name_ = config.patternname;
         scene_name_ = config.scenename;
+        bin_scale_ = config.binScale;
     }
 
-    void setParams(double line_scale, double axis_scale, double bin_scale, double grid_scale, double object_marker_scale,
-                   double bin_opacity, double grid_opacity, double vote_opacity, double object_marker_opacity, double confidence_sphere_opacity, std::string pattern_name, std::string scene_name){
-
-        bin_scale_ = bin_scale;
-        line_scale_ = line_scale;
-        axis_scale_ = axis_scale;
-        bin_scale_ = bin_scale;
-        grid_scale_ = grid_scale;
-        object_marker_scale_ = object_marker_scale;
-        bin_opacity_ = bin_opacity;
-        grid_opacity_ = grid_opacity;
-        vote_opacity_ = vote_opacity;
-        object_marker_opacity_ = object_marker_opacity;
-        confidence_sphere_opacity_ = confidence_sphere_opacity;
-        pattern_name_ = pattern_name;
-        scene_name_ = scene_name;
-    }
-
-
-    void setGlobalParams(double marker_lifetime, std::string base_frame){
-        marker_lifetime_ = marker_lifetime;
-        base_frame_ = base_frame;
-    }
 
     /// adds Visualization and draws Votes
     /// @param votingSpace the whole votingspace
