@@ -21,7 +21,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <ISM/utility/GeometryHelper.hpp>
 
 //#define USE_LINES
-
+//#define VOTE_DIFFERENCE
 
 namespace VIZ
 {
@@ -116,9 +116,16 @@ visualization_msgs::MarkerArray ModelVisualizerRVIZ::generateModelMarkers(std::s
             }
             else
             {
-                ISM::VoteSpecifierPtr vote;
                 std::cout << "Vote from: " << vote->objectType  << " with ID: " << vote->observedId
                           << " at track-index: " << index << " couldn't be drawn!\n";
+
+                #ifdef VOTE_DIFFERENCE
+                    double position_difference = ISM::GeometryHelper::getDistanceBetweenPoints(expected_object_pose->point, obj->pose->point);
+                    double orientation_difference = ISM::GeometryHelper::getAngleBetweenQuats(expected_object_pose->quat, obj->pose->quat);
+                    std::cout << "VOTE_DEBUG_INFO  -position deviation: " << position_difference
+                              << "   -angle deviation: " << orientation_difference << std::endl << std::endl;
+
+                #endif
             }
         }
     }
