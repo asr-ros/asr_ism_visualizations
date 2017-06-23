@@ -5,7 +5,7 @@ add_definitions(-Wall -std=gnu++0x -ggdb -lboost_system)
 
 find_package(cmake_modules)
 find_package(Boost REQUIRED)
-find_package(Eigen REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
@@ -28,7 +28,7 @@ generate_dynamic_reconfigure_options(
 include_directories(
 	include
 	${catkin_INCLUDE_DIRS}
-	${Eigen_INCLUDE_DIRS}
+	${EIGEN3_INCLUDE_DIRS}
 	${Boost_INCLUDE_DIRS}
 )
 
@@ -37,7 +37,7 @@ catkin_package(
 	INCLUDE_DIRS include
 	LIBRARIES ${PROJECT_NAME}
 	CATKIN_DEPENDS roscpp tf asr_msgs visualization_msgs asr_lib_ism
-	DEPENDS Eigen Boost
+	DEPENDS EIGEN3 Boost
 )
 
 FILE(GLOB_RECURSE HEADERS "include/asr_ism_visualizations/*.hpp")
