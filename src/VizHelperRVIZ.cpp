@@ -263,7 +263,7 @@ Marker VizHelperRVIZ::createSphereMarker(ISM::PointPtr point, std::string baseFr
 {
     Marker retMarker = VizHelperRVIZ::createMarkerWithoutTypeAndPose(baseFrame, markerNamespace, id, radius, radius, radius, color, markerLifetime);
 
-    const std::string conePath = "package://asr_ism_visualizations/res/sphere.dae";
+    const std::string conePath = "package://asr_ism_visualizations/rsc/sphere.dae";
     retMarker.pose.position = pointToPointMsg(point);
 
     retMarker.type = Marker::MESH_RESOURCE;
@@ -277,7 +277,7 @@ Marker VizHelperRVIZ::createConeMarker(ISM::PosePtr pose, std::string baseFrame,
 {
     Marker retMarker = VizHelperRVIZ::createMarkerWithoutTypeAndPose(baseFrame, markerNamespace, id, radius, radius, radius, color, markerLifetime);
 
-    const std::string conePath = "package://asr_ism_visualizations/res/openCone.dae";
+    const std::string conePath = "package://asr_ism_visualizations/rsc/openCone.dae";
     retMarker.pose.position = pointToPointMsg(pose->point);
     retMarker.pose.orientation = quatToQuaternionMsg(pose->quat);
 
@@ -555,8 +555,8 @@ MarkerArray VizHelperRVIZ::createRingMarker(ISM::PosePtr pose, std::string baseF
 {
     MarkerArray retMarkers;
 
-    const std::string arrowPath = "package://asr_ism_visualizations/res/arrow.dae";
-    const std::string ringPath = "package://asr_ism_visualizations/res/ring.dae";
+    const std::string arrowPath = "package://asr_ism_visualizations/rsc/arrow.dae";
+    const std::string ringPath = "package://asr_ism_visualizations/rsc/ring.dae";
 
     const geometry_msgs::Point markerPoint =  pointToPointMsg(pose->point);
 
@@ -614,8 +614,8 @@ MarkerArray VizHelperRVIZ::createCubeArrow(ISM::PosePtr pose, std::string baseFr
 {
     MarkerArray retMarkers;
 
-    const std::string openCubeMeshResourcePath = "package://asr_ism_visualizations/res/openCube.dae";
-    const std::string openPyramidMeshResourcePath = "package://asr_ism_visualizations/res/openPyramid.dae";
+    const std::string openCubeMeshResourcePath = "package://asr_ism_visualizations/rsc/openCube.dae";
+    const std::string openPyramidMeshResourcePath = "package://asr_ism_visualizations/rsc/openPyramid.dae";
 
 
     Marker cube = createMarkerWithoutTypeAndPose(baseFrame, markerNamespace, ++id, scale, scale, scale, cubeColor, markerLifetime);
@@ -719,7 +719,7 @@ visualization_msgs::Marker VizHelperRVIZ::pointToCube(std::string ns, int32_t id
 visualization_msgs::MarkerArray VizHelperRVIZ::createPositionVector(ISM::PosePtr pose, std::string baseFrame, std::string markerNamespace, ColorRGBA color, UniformDistributionGenerator* udg, int sampels, int axis, int id, float length, float openAngle, float sphereRadius, double markerLifetime){
     MarkerArray retMarkers;
 
-    const std::string directionPath = "package://asr_ism_visualizations/res/rotCone.dae";
+    const std::string directionPath = "package://asr_ism_visualizations/rsc/rotCone.dae";
 
     const ISM::PointPtr markerPoint =  pose->point;
 
@@ -767,7 +767,7 @@ visualization_msgs::MarkerArray VizHelperRVIZ::createPositionVector(ISM::PosePtr
 visualization_msgs::MarkerArray VizHelperRVIZ::createCoordinateMarkerWithAngle(ISM::PosePtr pose, std::string baseFrame, std::string markerNamespace, int id, float length, float openAngle, double markerLifetime){
     MarkerArray retMarkers;
 
-    const std::string directionPath = "package://asr_ism_visualizations/res/rotCone.dae";
+    const std::string directionPath = "package://asr_ism_visualizations/rsc/rotCone.dae";
     const geometry_msgs::Point markerPoint =  pointToPointMsg(pose->point);
 
     Marker rMarker = createMarkerWithoutTypeAndPose(baseFrame, markerNamespace, id, openAngle, openAngle, length, VizHelperRVIZ::createColorRGBA(1.0, 0.0, 0.0, 1.0), markerLifetime);
@@ -796,7 +796,7 @@ visualization_msgs::MarkerArray VizHelperRVIZ::createCoordinateMarkerWithAngle(I
 visualization_msgs::MarkerArray VizHelperRVIZ::createCoordinateMarker(ISM::PosePtr pose, std::string baseFrame, std::string markerNamespace, int id, float length, float radius, double markerLifetime){
     MarkerArray retMarkers;
 
-    const std::string directionPath = "package://asr_ism_visualizations/res/transCylinder.dae";
+    const std::string directionPath = "package://asr_ism_visualizations/rsc/transCylinder.dae";
     const geometry_msgs::Point markerPoint =  pointToPointMsg(pose->point);
 
     Marker rMarker = createMarkerWithoutTypeAndPose(baseFrame, markerNamespace, id, radius, radius, length, VizHelperRVIZ::createColorRGBA(1.0, 0.0, 0.0, 1.0), markerLifetime);
