@@ -85,6 +85,9 @@ namespace VIZ
 			*/
             static ColorRGBA confidenceToColor(double confidence);
 
+            static ColorRGBA getColorOfObject(const ISM::Object& object);
+            static ColorRGBA getColorOfObject(const ISM::ObjectPtr object_ptr);
+
             /**
             *	\param markerLifetime if 0 then the marker will not deleted automatically, else markerLifetime will be interpreted as seconds.
             */

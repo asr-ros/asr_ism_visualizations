@@ -237,6 +237,46 @@ ColorRGBA VizHelperRVIZ::confidenceToColor(double confidence)
     return VizHelperRVIZ::hsvToRGBA(hue, 1.0, 1.0);
 }
 
+ColorRGBA VizHelperRVIZ::getColorOfObject(const ISM::Object &object)
+{
+    std::string observedId = object.observedId;
+    std::vector<float> rgba;
+    if ( ( observedId.length() == 12 ) && ( observedId.find_first_not_of("0123456789") == std::string::npos ) )
+    {
+        try
+        {
+            for (int i = 0; i <= 3; i++)
+            {
+                std::string temp;
+
+                temp = observedId.substr( (i * 3), 3 );
+                rgba.push_back(std::stof(temp) / 100.0);
+            }
+        }
+        catch (std::invalid_argument& ia)
+        {
+            rgba.clear();
+            rgba.push_back(0);
+            rgba.push_back(0);
+            rgba.push_back(0);
+            rgba.push_back(1);
+        }
+    }
+    else
+    {
+        rgba.push_back(0);
+        rgba.push_back(0);
+        rgba.push_back(0);
+        rgba.push_back(0);
+    }
+    return VizHelperRVIZ::createColorRGBA(rgba);
+}
+
+ColorRGBA VizHelperRVIZ::getColorOfObject(const ISM::ObjectPtr object_ptr)
+{
+    return getColorOfObject(*object_ptr);
+}
+
 
 Marker VizHelperRVIZ::createMarkerWithoutTypeAndPose(std::string baseFrame, std::string markerNamespace, int id, float xScale, float yScale,
                                                      float zScale, ColorRGBA color, double markerLifetime)

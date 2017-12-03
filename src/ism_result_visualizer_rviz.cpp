@@ -129,7 +129,7 @@ visualization_msgs::MarkerArray ISMResultVisualizerRVIZ::getMarkersFromResult(co
                 //Meshmarker
                 if(!object->ressourcePath.empty()){
 
-                    Marker mesh_marker = VizHelperRVIZ::createMeshMarker(getAdjustedPose(object->pose, inverse_depth, true), base_frame_, marker_namespace, ++j, VizHelperRVIZ::createColorRGBA(ISM::getColorOfObject(object)), marker_lifetime_, object->ressourcePath.c_str());
+                    Marker mesh_marker = VizHelperRVIZ::createMeshMarker(getAdjustedPose(object->pose, inverse_depth, true), base_frame_, marker_namespace, ++j, VizHelperRVIZ::getColorOfObject(object), marker_lifetime_, object->ressourcePath.c_str());
 
                     mesh_marker.scale.x = 0.0001;
                     mesh_marker.scale.y = 0.0001;

@@ -177,7 +177,7 @@ void ISMPosePredictionVisualizerRVIZ::updateObjectMarker(){
 
     boost::filesystem::path object_ressource_path = object_ptr.ressourcePath;
 
-    ColorRGBA object_color = VizHelperRVIZ::createColorRGBA(ISM::getColorOfObject(object_ptr));
+    ColorRGBA object_color = VizHelperRVIZ::getColorOfObject(object_ptr);
 
     // generate and publish object Markers
     Marker marker = VizHelperRVIZ::createMeshMarker(pose, base_frame_, marker_namespace, 1, object_color, marker_lifetime_, object_ressource_path.string());

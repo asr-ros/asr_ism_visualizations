@@ -52,7 +52,7 @@ visualization_msgs::MarkerArray ObjectModelVisualizerRVIZ::getMarkersFromObjects
         {
             visualization_msgs::Marker tempObjectMarker;
             tempObjectMarker = VizHelperRVIZ::createMeshMarker(object->pose, this->baseFrame, markerNamespace + object->type + object->observedId, 0,
-                                                               VizHelperRVIZ::createColorRGBA(ISM::getColorOfObject(object)), this->markerLifetime,
+                                                               VizHelperRVIZ::getColorOfObject(object), this->markerLifetime,
                                                                tempPath);
 
             // predefined highlighting exists?
