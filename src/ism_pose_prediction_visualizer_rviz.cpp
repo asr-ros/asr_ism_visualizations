@@ -19,7 +19,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 //Ilcas includes
 #include <asr_ism_visualizations/ObjectModelVisualizerRVIZ.hpp>
-#include <ISM/utility/viz_helper.hpp>
 #include <ISM/utility/GeometryHelper.hpp>
 
 //ros includes

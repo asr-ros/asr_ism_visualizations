@@ -19,7 +19,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 //Ilcas includes
 #include <ISM/utility/GeometryHelper.hpp>
-#include <ISM/utility/viz_helper.hpp>
 #include <ISM/common_type/Pose.hpp>
 #include <ISM/common_type/Object.hpp>
 #include <ISM/common_type/RecognitionResult.hpp>
